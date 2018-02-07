@@ -23,16 +23,12 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
          */
         getSum: function(array) {
             var sum = 0;
-            var isDecimal = false;
             array.forEach(function(value) {
                 sum += value;
-                if (this.isDecimal(value)) {
-                    isDecimal = true;
-                }
             }, this);
 
-            if (isDecimal) {
-                return sum.toFixed(2);
+            if (sum % 1 != 0) {
+                return parseFloat(sum.toFixed(2));
             } else {
                 return sum;
             }
@@ -90,6 +86,17 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
                 obj[stat].average = this.getAverage(array);
                 obj[stat].total = this.getSum(array);
                 obj[stat].best = this.getMax(array);
+
+                // 2 decimal places for score, round numbers for all others
+                if (stat !== 'score') {
+                    obj[stat].average = Math.round(obj[stat].average);
+                    obj[stat].total = Math.round(obj[stat].total);
+                    obj[stat].best = Math.round(obj[stat].best);
+                } else {
+                    obj[stat].average = parseFloat(obj[stat].average.toFixed(2));;
+                    obj[stat].total = parseFloat(obj[stat].total.toFixed(2));;
+                    obj[stat].best = parseFloat(obj[stat].best.toFixed(2));;
+                }
             }
 
             return obj;
