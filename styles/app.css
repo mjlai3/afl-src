@@ -40,10 +40,6 @@ body {
 	margin-top: 0;
 }
 
-.box:last-child {
-	margin-bottom: 0;
-}
-
 .team {
 	position: relative;
 	text-align: center;
@@ -176,6 +172,7 @@ body {
 
 	.player {
 		display: flex;
+		margin-bottom: 15px;
 	}
 
 	.stat-section {

@@ -9,16 +9,16 @@
 
 <body ng-app="app">
 	<div class="container" ng-controller="PlayersController">
-		<div class="player">
+		<div class="player" ng-repeat="player in players">
 			<div class="box box--large">
 				<div class="team team--sydney-swans">
 					<img src="./requirements/assets/Swans-rev.svg" class="team-logo">
-					<img src="./requirements/assets/240399.png" class="player-image">
-					<div class="guernsey-number">23</div>
+					<img ng-src="{{player.imageUrl}}" class="player-image">
+					<div class="guernsey-number">{{player.jumperNumber}}</div>
 				</div>
 				<div class="info">
-					<span class="player-name">Lance <strong>Franklin</strong></span>
-					<span class="club">SYDNEY SWANS</span>
+					<span class="player-name">{{player.firstname}} <strong>{{player.lastname}}</strong></span>
+					<span class="club">{{player.club.toUpperCase()}}</span>
 				</div>
 			</div>
 			<div class="box box--small center">
@@ -93,7 +93,7 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="./scripts/angular.min.js"></script>
+	<script type="text/javascript" src="./scripts/vendor/angular.min.js"></script>
 	<script type="text/javascript" src="./scripts/app.js"></script>
 	<script type="text/javascript" src="./scripts/services/server.js"></script>
 	<script type="text/javascript" src="./scripts/controllers/PlayersController.js"></script>

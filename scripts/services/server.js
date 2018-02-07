@@ -13,7 +13,10 @@ angular.module('app.services').factory('server', ['$http', function($http) {
         get: function(url) {
             return $http({
                 method: 'GET',
-                url: url
+                url: url,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
         }
     };
