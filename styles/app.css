@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+:root {
+	--red: #ee1e31;
+	--black: #000000;
+	--grey: #e1e1e1;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	background-color: #efefef;
+}
+
+.container {
+	max-width: 1377px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.row {
+	display: flex;
+}
+
+.box {
+	background-color: #fff;
+	flex: 1 1 auto;
+}
+
+.box + .box {
+	margin-left: 15px;
+}
+
+.box--large {
+	width: 46%;
+}
+
+.box--small {
+	width: 27%;
+}
+
+.team {
+	position: relative;
+	text-align: center;
+}
+
+.team--sydney-swans {
+	background-color: #ee1e31;
+}
+
+.team-logo {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+
+.player-image {
+	vertical-align: bottom;
+}
+
+.info {
+	padding: 15px 20px;
+}
+
+.guernsey-number {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 32.8px;
+	font-weight: bold;
+	letter-spacing: -0.9px;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 0 15px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.player-name {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 30.3px;
+	line-height: 1.08;
+	letter-spacing: 0.2px;
+	text-align: left;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.club {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16.1px;
+	line-height: 1.2;
+	letter-spacing: -0px;
+	text-align: left;
+	color: #262424;
+	display: block;
+}
+
+.stat-section-header {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 13.7px;
+	font-weight: bold;
+	line-height: 1.34;
+	letter-spacing: -0px;
+	display: block;
+	margin: 15px 0;
+}
+
+.stat-header {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 11.2px;
+	font-weight: bold;
+	letter-spacing: -0px;
+	color: #808080;
+	display: block;
+}
+
+.stat {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 43px;
+	font-weight: bold;
+	letter-spacing: -1.2px;
+	text-align: center;
+	display: block;
+}
+
+.stat-item {
+	margin-bottom: 35px;
+}
+
+.half {
+	width: 50%;
+}
+
+.center {
+	text-align: center;
+}
+
+.red {
+	color: #ee1e31;
+	color: var(--red);
+}
+
+.foo {
+
+}

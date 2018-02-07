@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AFL Player Statistics</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+	<link rel="stylesheet" href="./styles/normalize.css">
+	<link rel="stylesheet" href="./styles/app.css">
+</head>
+
+<body ng-app="players">
+	<div class="container" ng-controller="PlayersController">
+		<div class="row">
+			<div class="box box--large">
+				<div class="team team--sydney-swans">
+					<img src="./requirements/assets/Swans-rev.svg" class="team-logo">
+					<img src="./requirements/assets/240399.png" class="player-image">
+					<div class="guernsey-number">23</div>
+				</div>
+				<div class="info">
+					<span class="player-name">Lance <strong>Franklin</strong></span>
+					<span class="club">SYDNEY SWANS</span>
+				</div>
+			</div>
+			<div class="box box--small center">
+				<small class="stat-section-header">TOTAL</small>
+				<div class="row">
+					<div class="half stat-item">
+						<small class="stat-header">DISPOSALS</small>
+						<span class="stat">23</span>
+					</div>
+					<div class="half stat-item">
+						<small class="stat-header">HANDBALLS</small>
+						<span class="stat">8</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="half stat-item">
+						<small class="stat-header">KICKS</small>
+						<span class="stat">300</span>
+					</div>
+					<div class="half stat-item">
+						<small class="stat-header">TACKLES</small>
+						<span class="stat">23</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="half stat-item">
+						<small class="stat-header">MARKS</small>
+						<span class="stat">8</span>
+					</div>
+					<div class="half stat-item">
+						<small class="stat-header">SCORE</small>
+						<span class="stat">32.11</span>
+					</div>
+				</div>
+			</div>
+			<div class="box box--small center red">
+				<small class="stat-section-header">AVERAGE</small>
+				<div class="row">
+					<div class="half stat-item">
+						<small class="stat-header">DISPOSALS</small>
+						<span class="stat">23</span>
+					</div>
+					<div class="half stat-item">
+						<small class="stat-header">HANDBALLS</small>
+						<span class="stat">8</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="half stat-item">
+						<small class="stat-header">KICKS</small>
+						<span class="stat">300</span>
+					</div>
+					<div class="half stat-item">
+						<small class="stat-header">TACKLES</small>
+						<span class="stat">23</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="half stat-item">
+						<small class="stat-header">MARKS</small>
+						<span class="stat">8</span>
+					</div>
+					<div class="half stat-item">
+						<small class="stat-header">SCORE</small>
+						<span class="stat">32.11</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script type="text/javascript" src="./scripts/app.js"></script>
+</body>
+</html>
