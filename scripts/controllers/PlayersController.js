@@ -15,8 +15,8 @@ angular.module('app.controllers').controller('PlayersController', ['$scope', 'se
     		$scope.players = players;
     		console.log($scope.players);
     	})
-    	.catch(function() {
-    		console.log('Error fetching data.');
+    	.catch(function(error) {
+    		console.log('Error: ' + error);
     	});
 
  //    var games = [

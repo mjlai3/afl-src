@@ -4,6 +4,17 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
 
     return {
         /**
+         * Checks if a number is a decimal.
+         * 
+         * @public 
+         * @param {number} number The number to check if it is decimal.
+         * @returns {boolean} Returns true or false depending on whether the number is a decimal.
+         */
+        isDecimal: function(number) {
+            return number % 1 != 0;
+        },
+
+        /**
          * Calculates the sum of an array.
          * 
          * @public 
@@ -12,10 +23,19 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
          */
         getSum: function(array) {
             var sum = 0;
+            var isDecimal = false;
             array.forEach(function(value) {
                 sum += value;
-            });
-            return sum;
+                if (this.isDecimal(value)) {
+                    isDecimal = true;
+                }
+            }, this);
+
+            if (isDecimal) {
+                return sum.toFixed(2);
+            } else {
+                return sum;
+            }
         },
 
         /**
@@ -72,7 +92,6 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
                 obj[stat].best = this.getMax(array);
             }
 
-            console.log(obj);
             return obj;
         }
     };
