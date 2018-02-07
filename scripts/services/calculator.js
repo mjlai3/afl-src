@@ -40,7 +40,43 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
             return array.reduce(function(a, b) {
                 return Math.max(a, b);
             });
+        },
+
+        /**
+         * Calculates the tals, averages and season bests
+         * for handballs, kicks, marks, score and tackles.
+         * 
+         * @public 
+         * @param {Array} array The array of games to generate calculations for.
+         * @returns {Object} Returns an object with calculations of totals, averages and season bests.
+         */
+        getCalculations: function(games) {
+            var obj = {};
+
+            games.forEach(function(game) {
+                for (var stat in game) {
+                    if (stat !== 'round') {
+                        if (obj.hasOwnProperty(stat)) {
+                            obj[stat]['record'].push(game[stat]);
+                        } else {
+                            obj[stat] = {record: [game[stat]]};
+                        }
+                    }
+                }
+            });
+
+            for (var stat in obj) {
+                var array = obj[stat]['record'];
+                obj[stat].average = this.getAverage(array);
+                obj[stat].total = this.getSum(array);
+                obj[stat].best = this.getMax(array);
+            }
+
+            console.log(obj);
+            return obj;
         }
     };
 
 }]);
+
+    
