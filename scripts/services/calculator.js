@@ -4,17 +4,6 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
 
     return {
         /**
-         * Checks if a number is a decimal.
-         * 
-         * @public 
-         * @param {number} number The number to check if it is decimal.
-         * @returns {boolean} Returns true or false depending on whether the number is a decimal.
-         */
-        isDecimal: function(number) {
-            return number % 1 != 0;
-        },
-
-        /**
          * Calculates the sum of an array.
          * 
          * @public 
