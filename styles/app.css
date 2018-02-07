@@ -25,24 +25,23 @@ body {
 }
 
 .row {
+	width: 100%;
 	display: flex;
 }
 
 .box {
 	background-color: #fff;
 	flex: 1 1 auto;
+	margin: 15px 0;
+	overflow: auto;
 }
 
-.box + .box {
-	margin-left: 15px;
+.box:first-child {
+	margin-top: 0;
 }
 
-.box--large {
-	width: 46%;
-}
-
-.box--small {
-	width: 27%;
+.box:last-child {
+	margin-bottom: 0;
 }
 
 .team {
@@ -148,6 +147,38 @@ body {
 	color: var(--red);
 }
 
-.foo {
+@media screen and (min-width: 414px) {
 
+}
+
+@media screen and (min-width: 768px) {
+	.stat-section {
+		display: flex;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.box {
+		margin: 0;
+	}
+
+	.box + .box {
+		margin-left: 15px;
+	}
+
+	.box--large {
+		width: 46%;
+	}
+
+	.box--small {
+		width: 27%;
+	}
+
+	.player {
+		display: flex;
+	}
+
+	.stat-section {
+		display: block;
+	}
 }
