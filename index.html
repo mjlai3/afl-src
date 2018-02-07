@@ -12,7 +12,7 @@
 		<div class="player" ng-repeat="player in players">
 			<div class="box box--large">
 				<div class="team team--sydney-swans">
-					<img src="./requirements/assets/Swans-rev.svg" class="team-logo">
+					<img ng-src="./requirements/assets/Swans-rev.svg" ng-if="player.club.toLowerCase() === 'sydney swans'" class="team-logo">
 					<img ng-src="{{player.imageUrl}}" class="player-image">
 					<div class="guernsey-number">{{player.jumperNumber}}</div>
 				</div>
