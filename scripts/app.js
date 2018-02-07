@@ -1,19 +1,10 @@
-angular.module('players', [])
+"use strict";
 
-.controller('PlayersController', ['server', '$q'], function($scope, server, $q) {
-	
-	var foo = server.get('../data/players.json');
-	console.log(foo);
-    $q.all([getObligationOptions])
-    	.then(function() {
-    		console.log(results);
-    	})
-    	.catch(function() {
+angular.module("players", ["app.services"])
 
-    	});
-})
+angular.module("app.services", []);
 
-.factory('server', ['$http', function($http) {
+angular.module("app.services").factory('server', ['$http', function($http) {
 
     return {
         /**
@@ -31,4 +22,17 @@ angular.module('players', [])
         }
     };
 
+}]);
+
+angular.module('players').controller('PlayersController', ['$scope', 'server', '$q', function($scope, server, $q) {
+	
+	var foo = server.get('../data/players.json');
+	console.log(foo);
+    $q.all([foo])
+    	.then(function() {
+    		console.log(results);
+    	})
+    	.catch(function() {
+
+    	});
 }]);
