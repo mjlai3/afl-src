@@ -46,7 +46,6 @@ angular.module('app.controllers').controller('PlayersController', ['$scope', 'se
 	// }
 
 	var obj = {};
-	var ac = 0;
 
 	games.forEach(function(game) {
 		for (var stat in game) {
@@ -59,5 +58,11 @@ angular.module('app.controllers').controller('PlayersController', ['$scope', 'se
 	});
 
 	console.log(obj);
+
+	var calcs = {};
+
+	for (var stat in obj) {
+		console.log(obj[stat]);
+	}
 
 }]);
