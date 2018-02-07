@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app.controllers').controller('PlayersController', ['$scope', 'server', '$q', function($scope, server, $q) {
+angular.module('app.controllers').controller('PlayersController', ['$scope', 'server', 'calculator', '$q', function($scope, server, calculator, $q) {
 
 	$scope.players = [];
 	
@@ -35,34 +35,27 @@ angular.module('app.controllers').controller('PlayersController', ['$scope', 'se
 	        { "round": 20, "kicks": 14, "handballs": 12, "marks": 8, "tackles": 1, "score": 1.6 }
 	    ];
 
- //    var foo = function(arr) {
-	// 	arr.forEach(function(el) {
-	// 		var key = el.id;
-	// 		obj[key] = obj[key] || { count: 0, total: 0, avg: 0 };
-	// 		obj[key].count++;
-	// 		obj[key].total += el.val;
-	// 		obj[key].avg = obj[key].total / obj[key].count;
-	// 	});
-	// }
-
 	var obj = {};
 
 	games.forEach(function(game) {
 		for (var stat in game) {
-			if (obj.hasOwnProperty(stat)) {
-				obj[stat].push(game[stat]);
-			} else {
-				obj[stat] = [game[stat]];
+			if (stat !== 'round') {
+				if (obj.hasOwnProperty(stat)) {
+					obj[stat]['record'].push(game[stat]);
+				} else {
+					obj[stat] = {record: [game[stat]]};
+				}
 			}
 		}
 	});
 
-	console.log(obj);
-
-	var calcs = {};
-
 	for (var stat in obj) {
-		console.log(obj[stat]);
+		var array = obj[stat]['record'];
+		obj[stat].average = calculator.getAverage(array);
+		obj[stat].total = calculator.getSum(array);
+		obj[stat].best = calculator.getMax(array);
 	}
+
+	console.log(obj);
 
 }]);
