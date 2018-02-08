@@ -9,10 +9,34 @@ var browserSyncLib = require('browser-sync');
 var browserSync = browserSyncLib.create();
 
 gulp.task('serve', [
+	'html',
+	'assets',
+	'data',
+	'views',
 	'sass',
 	'scripts',
 	'browser-sync'
 ]);
+
+gulp.task('html', function() {
+	gulp.src(['./src/index.html'])
+		.pipe(gulp.dest('./dist'));
+});
+
+gulp.task('assets', function() {
+	gulp.src(['./src/assets/**/*.*'])
+		.pipe(gulp.dest('./dist/assets'));
+});
+
+gulp.task('data', function() {
+	gulp.src(['./src/data/**/*.*'])
+		.pipe(gulp.dest('./dist/data'));
+});
+
+gulp.task('views', function() {
+	gulp.src(['./src/views/**/*.*'])
+		.pipe(gulp.dest('./dist/views'));
+});
 
 gulp.task('sass', function() {
 	return gulp.src('./src/styles/*.scss')
