@@ -21,68 +21,8 @@
 					<span class="club">{{player.club.toUpperCase()}}</span>
 				</div>
 			</div>
-			<div class="box box--small center">
-				<small class="stat-section-header">TOTAL</small>
-				<div class="stat-section">
-					<div class="row">
-						<div class="half stat-item">
-							<small class="stat-header">HANDBALLS</small>
-							<span class="stat">{{player.calculations.handballs.total}}</span>
-						</div>
-						<div class="half stat-item">
-							<small class="stat-header">KICKS</small>
-							<span class="stat">{{player.calculations.kicks.total}}</span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="half stat-item">
-							<small class="stat-header">TACKLES</small>
-							<span class="stat">{{player.calculations.tackles.total}}</span>
-						</div>
-						<div class="half stat-item">
-							<small class="stat-header">MARKS</small>
-							<span class="stat">{{player.calculations.marks.total}}</span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="half stat-item">
-							<small class="stat-header">SCORE</small>
-							<span class="stat">{{player.calculations.score.total}}</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="box box--small center red">
-				<small class="stat-section-header">AVERAGE</small>
-				<div class="stat-section">
-					<div class="row">
-						<div class="half stat-item">
-							<small class="stat-header">HANDBALLS</small>
-							<span class="stat">{{player.calculations.handballs.average}}</span>
-						</div>
-						<div class="half stat-item">
-							<small class="stat-header">KICKS</small>
-							<span class="stat">{{player.calculations.kicks.average}}</span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="half stat-item">
-							<small class="stat-header">TACKLES</small>
-							<span class="stat">{{player.calculations.tackles.average}}</span>
-						</div>
-						<div class="half stat-item">
-							<small class="stat-header">MARKS</small>
-							<span class="stat">{{player.calculations.marks.average}}</span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="half stat-item">
-							<small class="stat-header">SCORE</small>
-							<span class="stat">{{player.calculations.score.average}}</span>
-						</div>
-					</div>
-				</div>
-			</div>
+			<stat-box heading="TOTAL" stats="player.calculations" stat-type="total"></stat-box>
+			<stat-box heading="AVERAGE" stats="player.calculations" stat-type="total" theme="red"></stat-box>
 		</div>
 	</div>
 	<script type="text/javascript" src="./scripts/vendor/angular.min.js"></script>
@@ -90,5 +30,6 @@
 	<script type="text/javascript" src="./scripts/services/server.js"></script>
 	<script type="text/javascript" src="./scripts/services/calculator.js"></script>
 	<script type="text/javascript" src="./scripts/controllers/PlayersController.js"></script>
+	<script type="text/javascript" src="./scripts/directives/statBox.js"></script>
 </body>
 </html>
