@@ -4,7 +4,7 @@ angular.module('app.controllers').controller('PlayersController', ['$scope', 'se
 
 	$scope.players = [];
 	
-	var playersPromise = server.get('../data/players.json');
+	var playersPromise = server.get('./data/players.json');
 
     $q.all([playersPromise])
     	.then(function(results) {

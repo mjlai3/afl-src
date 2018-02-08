@@ -12,6 +12,6 @@ angular.module('app.directives')
 			class: '@'
 		},
 		replace: true,
-		templateUrl: '../views/statBox.html'
+		templateUrl: './views/statBox.html'
 	}
 });
