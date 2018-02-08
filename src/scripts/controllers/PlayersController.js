@@ -13,7 +13,6 @@ angular.module('app.controllers').controller('PlayersController', ['$scope', 'se
 				player.calculations = calculator.getCalculations(player.games);
     		});
     		$scope.players = players;
-    		console.log($scope.players);
     	})
     	.catch(function(error) {
     		console.log('Error: ' + error);
