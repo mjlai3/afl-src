@@ -14,7 +14,7 @@ angular.module('app.services').factory('calculator', ['$http', function($http) {
             var sum = 0;
             array.forEach(function(value) {
                 sum += value;
-            }, this);
+            });
 
             if (sum % 1 != 0) {
                 return parseFloat(sum.toFixed(2));
