@@ -3,15 +3,14 @@
 <head>
 	<title>AFL Player Statistics</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
-	<link rel="stylesheet" href="./styles/normalize.css">
-	<link rel="stylesheet" href="./styles/app.css">
+	<link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body ng-app="app">
 	<div class="container" ng-controller="PlayersController">
 		<div class="player" ng-repeat="player in players">
 			<div class="box box--large">
-				<div class="team {{getTeamClass(player.club)}}">
+				<div class="team center {{getTeamClass(player.club)}}">
 					<img ng-src="./assets/Swans-rev.svg" ng-if="player.club.toLowerCase() === 'sydney swans'" class="team-logo">
 					<img ng-src="{{player.imageUrl}}" class="player-image">
 					<div class="guernsey-number">{{player.jumperNumber}}</div>
