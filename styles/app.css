@@ -143,6 +143,14 @@ body {
 	color: var(--red);
 }
 
+.desktop-only {
+	display: none;
+}
+
+.desktop-hide {
+	display: block;
+}
+
 @media screen and (min-width: 414px) {
 
 }
@@ -168,6 +176,14 @@ body {
 
 	.box--small {
 		width: 27%;
+	}
+
+	.desktop-only {
+		display: block;
+	}
+
+	.desktop-hide {
+		display: none;
 	}
 
 	.player {

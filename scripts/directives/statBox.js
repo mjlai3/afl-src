@@ -8,9 +8,10 @@ angular.module('app.directives')
 		scope: {
 			heading: '@',
 			stats: '=',
-			theme: '@',
-			statType: '@'
+			statType: '@',
+			class: '@'
 		},
+		replace: true,
 		templateUrl: '../views/statBox.html'
 	}
 });
