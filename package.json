@@ -12,5 +12,9 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/michaellai/afl#readme"
+  "homepage": "https://bitbucket.org/michaellai/afl#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
 }
