@@ -18,4 +18,9 @@ angular.module('app.controllers').controller('PlayersController', ['$scope', 'se
     	.catch(function(error) {
     		console.log('Error: ' + error);
     	});
+
+    $scope.getTeamClass = function(team) {
+        return 'team--' + team.toLowerCase().replace(' ', '-');
+    }
+
 }]);

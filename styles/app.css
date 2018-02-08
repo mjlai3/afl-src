@@ -45,14 +45,30 @@ body {
 	text-align: center;
 }
 
-.team--sydney-swans {
-	background-color: #ee1e31;
-}
-
 .team-logo {
 	position: absolute;
 	top: 15px;
 	left: 15px;
+}
+
+.team--adelaide {
+	background-color: #124372;
+}
+
+.team--carlton {
+	background-color: #013a59;
+}
+
+.team--geelong {
+	background-color: #263655;
+}
+
+.team--north-melbourne {
+	background-color: #094b85;
+}
+
+.team--sydney-swans {
+	background-color: #ee1e31;
 }
 
 .player-image {
